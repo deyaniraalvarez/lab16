@@ -1,1 +1,54 @@
 formulario de registro
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Registro - Formulario con imagen</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Registro de usuario</h1>
+
+    <form id="registroForm" novalidate>
+      <div class="form-row">
+        <label for="nombre">Nombre completo</label>
+        <input id="nombre" name="nombre" type="text" required />
+        <small class="error" id="err-nombre"></small>
+      </div>
+
+      <div class="form-row">
+        <label for="email">Correo electrónico</label>
+        <input id="email" name="email" type="email" required />
+        <small class="error" id="err-email"></small>
+      </div>
+
+      <div class="form-row">
+        <label for="password">Contraseña</label>
+        <input id="password" name="password" type="password" minlength="6" required />
+        <small class="error" id="err-password"></small>
+      </div>
+
+      <div class="form-row">
+        <label for="imagen">Imagen de perfil (JPG/PNG, < 2MB)</label>
+        <input id="imagen" name="imagen" type="file" accept="image/*" />
+        <small class="error" id="err-imagen"></small>
+      </div>
+
+      <div class="preview">
+        <img id="previewImg" alt="Vista previa" />
+      </div>
+
+      <div class="actions">
+        <button type="submit">Registrar</button>
+        <button type="reset" id="btnReset" type="button">Limpiar</button>
+      </div>
+
+      <div id="successMsg" class="success" role="status" aria-live="polite"></div>
+    </form>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
